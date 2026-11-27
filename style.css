@@ -1,0 +1,274 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif, Calibri;
+    width: 100%;
+    background-color: rgb(248, 248, 224);
+}
+
+/* ================== navbar ================== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 7%;
+    margin: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #f7f2ac;
+    box-shadow: 0 5px 10px darkgrey;
+    height: 20px;
+    transition: transform 0.5s ease;
+    border-radius: 30px;
+}
+
+.hidden
+
+/* NOT FOR ANYTHING ELSE OTHER THAN THE NAVBAR */
+    {
+    transform: translateY(-100%);
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav>a {
+    position: relative;
+    text-decoration: none;
+    color: #25231f;
+    transition: color 0.5s ease;
+}
+
+nav>a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: black;
+    width: 100%;
+    height: 1px;
+    transform: scaleX(0);
+    transition: transform 0.2s ease;
+}
+
+nav>a:hover {
+    color: #666057;
+}
+
+nav>a:hover::after {
+    transform: scaleX(1);
+}
+
+#info {
+    color: #504a41;
+    font-size: 20px;
+}
+
+.number {
+    font-family: 'Consolas', 'Menlo', 'Monaco', monospace;
+    font-size: 14px;
+    color: #777;
+}
+
+.intro {
+    min-height: 75vh;
+    width: 86%;
+    margin: auto;
+    padding-top: 50px;
+    transition: transform 0.5s ease-out filter 0.5s ease-out;
+    transition: opacity 0.1s linear;
+}
+
+.intro h1 {
+    margin-bottom: 20px;
+}
+
+.intro h2 {
+    font-size: 25px;
+    max-width: 850px;
+}
+
+.intro_para {
+    max-width: 850px;
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+#scroll {
+    width: 0px;
+    height: 4px;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    max-width: 100%;
+    background-color: #ff6600;
+    z-index: 1001;
+}
+
+main {
+    width: 90%;
+    margin: auto;
+}
+
+#consumption {
+    border: 20px solid black;
+    width: 90%;
+    margin: auto;
+}
+
+#consumption>h2 {
+    font-size: 30px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 28px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    background-color: #ccc;
+    border-radius: 28px;
+    transition: 0.3s;
+}
+
+.slider::before {
+    content: "";
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+input:checked+.slider {
+    background-color: #f8ba0e;
+}
+
+input:checked+.slider::before {
+    transform: translateX(22px);
+}
+
+input:focus-visible+.slider {
+    outline: 2px solid #005fcc;
+    outline-offset: 2px;
+}
+
+#comsumption_card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#comsumption {
+    position: relative;
+    z-index: 1;
+}
+
+#time_time,
+#time_text,
+#time_img,
+#time_img_2 {
+    transition: opacity 0.4s ease;
+}
+
+.hide {
+    display: none !important;
+}
+
+#time_img,
+#time_img_2 {
+    max-width: 100%;
+}
+
+h1 {
+    font-size: clamp(3rem, 8vw, 7rem);
+    font-weight: 800;
+    letter-spacing: -4px;
+    font-size: 50px;
+    right: 50%;
+}
+
+#consumption,
+#healthcare {
+    width: 100%;
+    margin: 100px auto;
+    padding: 60px 5%;
+    border: none;
+    border-top: 1px solid #ccc;
+}
+
+.head {
+    font-size: clamp(3rem, 9vw, 8rem);
+    letter-spacing: -5px;
+    margin: 10px 0 50px;
+}
+
+.reveal {
+    opacity: 0;
+    filter: blur(12px);
+    transform: translateY(20px);
+    transition:
+        opacity 1s ease,
+        filter 1s ease,
+        transform 1s ease;
+}
+
+.reveal.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+}
+
+.card {
+    transition: transform 0.35s cubic-bezier(0.2, 0.6, 0.2, 1),
+        box-shadow 0.35s ease;
+    will-change: transform;
+    border-radius: 30px;
+    padding-left: 20px;
+    align-items: center;
+}
+
+.card:hover {
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+}
+
+.particle-box {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+#particle-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+/* backgorun pic?
+backgroud difference color scheme / like gradient?
+
+press button -> fade-in-out pics
+*/
